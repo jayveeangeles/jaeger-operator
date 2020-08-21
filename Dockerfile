@@ -4,7 +4,10 @@ COPY . /workdir
 
 WORKDIR /workdir
 
-RUN GOOS=linux GOARCH=ppc64le make build
+ENV GOOS=linux 
+ENV GOARCH=ppc64le 
+
+RUN make build
 
 FROM centos
 
